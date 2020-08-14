@@ -1,0 +1,59 @@
+﻿@model WebApplication9.Models.Empty
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Index</h1>
+
+<h4>Empty</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EventID" class="control-label"></label>
+                <input asp-for="EventID" class="form-control" />
+                <span asp-validation-for="EventID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EventName" class="control-label"></label>
+                <input asp-for="EventName" class="form-control" />
+                <span asp-validation-for="EventName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Detail" class="control-label"></label>
+                <input asp-for="Detail" class="form-control" />
+                <span asp-validation-for="Detail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Start" class="control-label"></label>
+                <input asp-for="Start" class="form-control" />
+                <span asp-validation-for="Start" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="End" class="control-label"></label>
+                <input asp-for="End" class="form-control" />
+                <span asp-validation-for="End" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Color" class="control-label"></label>
+                <input asp-for="Color" class="form-control" />
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            @ViewBag.message
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Create">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
